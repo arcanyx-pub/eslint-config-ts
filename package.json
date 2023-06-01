@@ -1,5 +1,5 @@
 {
-  "name": "@arcanyx-pub/eslint-config-ts",
+  "name": "@arcanyx/eslint-config-ts",
   "version": "1.0.0",
   "description": "ESLint Config for Arcanyx TypeScript projects",
   "main": "index.js",
