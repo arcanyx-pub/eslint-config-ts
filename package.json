@@ -1,0 +1,26 @@
+{
+  "name": "@arcanyx-pub/eslint-config-ts",
+  "version": "1.0.0",
+  "description": "ESLint Config for Arcanyx TypeScript projects",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcanyx-pub/eslint-config-ts.git"
+  },
+  "keywords": [
+    "eslint",
+    "typescript"
+  ],
+  "author": "Joe Dahlquist <joe@arcanyx.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arcanyx-pub/eslint-config-ts/issues"
+  },
+  "homepage": "https://github.com/arcanyx-pub/eslint-config-ts#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.59.8"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.1"
+  }
+}
