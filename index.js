@@ -9,16 +9,18 @@ export const tsNodeConfigs = [
         languageOptions: {
             parser: tsParser,
             parserOptions: {
-                project: "./tsconfig.json"
-            }
+                project: "./tsconfig.json",
+            },
         },
         plugins: {
-            "@typescript-eslint": tsPlugin
+            "@typescript-eslint": tsPlugin,
         },
         rules: {
             // A wee hack since @typescript-eslint doesn't officially support flat ESLint config.
-            ...tsPlugin.configs["eslint-recommended"].overrides.reduce((a, b) =>
-                ({...a.rules, ...b.rules}), {}),
+            ...tsPlugin.configs["eslint-recommended"].overrides.reduce(
+                (a, b) => ({ ...a.rules, ...b.rules }),
+                {}
+            ),
 
             ...tsPlugin.configs["recommended"].rules,
             ...tsPlugin.configs["recommended-requiring-type-checking"].rules,
@@ -37,10 +39,10 @@ export const tsNodeConfigs = [
             "@typescript-eslint/semi": ["error"],
 
             "no-unused-vars": "off",
-            "@typescript-eslint/no-unused-vars": ["error", {"argsIgnorePattern": "^_"}],
+            "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
 
             // Require switch statements to cover every case or have a default case.
             "@typescript-eslint/switch-exhaustiveness-check": "error",
-        }
+        },
     },
 ];
