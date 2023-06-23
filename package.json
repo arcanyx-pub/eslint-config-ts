@@ -1,6 +1,6 @@
 {
     "name": "@arcanyx/eslint-config-ts",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "ESLint Config for Arcanyx TypeScript projects",
     "repository": {
         "type": "git",
