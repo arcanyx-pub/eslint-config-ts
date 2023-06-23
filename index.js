@@ -1,9 +1,15 @@
-import js from "@eslint/js";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
+const js = require("@eslint/js");
+const tsPlugin = require("@typescript-eslint/eslint-plugin");
+const tsParser = require("@typescript-eslint/parser");
+const globals = require("globals");
 
 export const tsNodeConfigs = [
     js.configs.recommended,
+    {
+        languageOptions: {
+            globals: { ...globals.node },
+        },
+    },
     {
         files: ["**/*.ts", "**/*.tsx"],
         languageOptions: {
