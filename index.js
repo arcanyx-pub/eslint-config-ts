@@ -26,7 +26,7 @@ module.exports = {
                 // A wee hack since @typescript-eslint doesn't officially support flat ESLint config.
                 ...tsPlugin.configs["eslint-recommended"].overrides.reduce(
                     (a, b) => ({ ...a.rules, ...b.rules }),
-                    {}
+                    {},
                 ),
 
                 ...tsPlugin.configs["recommended"].rules,
