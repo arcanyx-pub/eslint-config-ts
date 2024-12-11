@@ -4,7 +4,7 @@
     "exports": [
         "./index.js"
     ],
-    "version": "4.1.1",
+    "version": "5.0.0",
     "description": "ESLint Config for Arcanyx TypeScript projects",
     "repository": {
         "type": "git",

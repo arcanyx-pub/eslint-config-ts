@@ -26,11 +26,11 @@ export default tslint.config({
         "prefer-const": "error",
 
         // Require double-quotes rather than single-quotes.
-        // Standard eslint quotes must be disabled when using Typescript version.
-        "@stylistic/quotes": ["error", "double"],
+        // Exception: can use single-quotes when double-quotes would need to be
+        // escaped.
+        "@stylistic/quotes": ["error", "double", { avoidEscape: true }],
 
         // Require semicolons at the end of all statements.
-        // Standard eslint semicolon enforcement must be disabled when using Typescript version.
         "@stylistic/semi": ["error", "always"],
 
         "no-unused-vars": "off",
