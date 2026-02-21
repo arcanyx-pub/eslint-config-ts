@@ -2,8 +2,10 @@ import eslint from "@eslint/js";
 import tslint from "typescript-eslint";
 import stylistic from "@stylistic/eslint-plugin";
 import globals from "globals";
+import { defineConfig } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
 
-export default tslint.config({
+const core = defineConfig({
     files: ["**/*.ts", "**/*.tsx"],
     extends: [
         eslint.configs.recommended,
@@ -40,3 +42,19 @@ export default tslint.config({
         "@typescript-eslint/switch-exhaustiveness-check": "error",
     },
 });
+
+const patchedNextVitals = nextVitals.map(config => {
+    if (config.plugins && config.plugins["@typescript-eslint"]) {
+        // Force Next.js to use the exact same plugin object as rcnxEslint to prevent error about
+        // duplicate "@typescript-eslint" definitions.
+        config.plugins["@typescript-eslint"] = tslint.plugin;
+    }
+    return config;
+});
+
+const coreAndNextJs = defineConfig(...patchedNextVitals, core);
+
+export default {
+    core,
+    coreAndNextJs,
+};
